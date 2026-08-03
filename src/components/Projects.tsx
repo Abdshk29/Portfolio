@@ -115,7 +115,7 @@ export function Projects() {
 
                   {/* Action Buttons */}
                   <div className="flex items-center gap-3 pt-2">
-                    {hasLiveDemo ? (
+                    {hasLiveDemo && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
@@ -125,10 +125,6 @@ export function Projects() {
                         <ExternalLink className="w-3.5 h-3.5" />
                         <span>Live Demo</span>
                       </a>
-                    ) : (
-                      <span className="px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-500 text-xs font-mono">
-                        Internal / Demo Not Live
-                      </span>
                     )}
 
                     {project.githubUrl && (

@@ -9,7 +9,6 @@ import {
   Linkedin,
   Mail,
   Phone,
-  Trophy,
   Terminal,
 } from "lucide-react";
 import { resumeData } from "@/data/resume";
@@ -151,7 +150,7 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Right Column: Professional Profile Photo Frame */}
+            {/* Right Column: Professional Circular Profile Photo Frame */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -159,35 +158,20 @@ export function Hero() {
               className="lg:col-span-5 relative flex justify-center w-full"
             >
               {/* Glowing Backdrop Circle */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/30 via-rose-400/20 to-fuchsia-600/30 rounded-3xl blur-3xl transform rotate-3 scale-95" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/30 via-rose-400/20 to-fuchsia-600/30 rounded-full blur-3xl transform scale-95" />
 
               {/* Profile Photo Container */}
-              <div className="relative p-2 rounded-3xl bg-gradient-to-b from-pink-500/40 via-rose-400/20 to-zinc-200 dark:to-zinc-900 border border-pink-500/30 shadow-2xl max-w-[280px] xs:max-w-[320px] sm:max-w-sm w-full mx-auto">
-                <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <div className="relative p-2 sm:p-2.5 rounded-full bg-gradient-to-b from-pink-500/40 via-rose-400/30 to-fuchsia-600/40 border border-pink-500/40 shadow-2xl max-w-[260px] xs:max-w-[300px] sm:max-w-[340px] w-full aspect-square mx-auto">
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-white/20 dark:border-zinc-800">
                   <Image
                     src={resumeData.personal.photoUrl}
                     alt={resumeData.personal.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, 400px"
+                    sizes="(max-width: 768px) 100vw, 340px"
                     priority
                     className="object-cover object-top hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-50 dark:opacity-70" />
-                </div>
-
-                {/* Award Badge Floating Overlay */}
-                <div className="absolute bottom-4 left-3 right-3 sm:bottom-5 sm:left-4 sm:right-4 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-zinc-950/90 backdrop-blur-xl border border-pink-500/40 flex items-center gap-2.5 sm:gap-3 shadow-xl">
-                  <div className="p-1.5 sm:p-2 rounded-xl bg-pink-500/20 text-pink-600 dark:text-pink-400 shrink-0">
-                    <Trophy className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-[11px] sm:text-xs font-bold text-zinc-900 dark:text-white">
-                      1st Position Winner
-                    </h3>
-                    <p className="text-[10px] sm:text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight">
-                      BS AI Final Year Projects (AasaanLearn)
-                    </p>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/30 via-transparent to-transparent opacity-40" />
                 </div>
               </div>
             </motion.div>

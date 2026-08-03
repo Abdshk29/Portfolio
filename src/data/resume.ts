@@ -147,10 +147,10 @@ export const resumeData = {
     {
       id: "recap-ai",
       title: "RecapAI",
-      subtitle: "AI Meeting Transcriber & Priority Task Generator",
+      subtitle: "AI Meeting Transcript & Priority Task Generator",
       description:
-        "Built a full-stack AI web application allowing users to convert meeting audio into structured tasks and assign intelligent priorities for seamless project management.",
-      tags: ["Next.js", "FastAPI", "NLP", "Task Automation", "Supabase"],
+        "Built a full-stack AI web application allowing users to convert meeting transcripts into structured tasks and assign intelligent priorities for seamless project management.",
+      tags: ["Next.js", "FastAPI", "Task Automation", "Supabase"],
       liveUrl: "https://recap-ai-three.vercel.app/",
       githubUrl: "https://github.com/Abdshk29",
       featured: true,
