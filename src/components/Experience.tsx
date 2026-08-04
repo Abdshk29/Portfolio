@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Briefcase, Calendar, MapPin, ChevronRight, Sparkles } from "lucide-react";
+import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
 import { resumeData } from "@/data/resume";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="experience" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <motion.div
@@ -42,8 +42,8 @@ export function Experience() {
           </motion.p>
         </div>
 
-        {/* Timeline Container */}
-        <div className="max-w-4xl mx-auto relative pl-6 sm:pl-10 border-l-2 border-zinc-200 dark:border-zinc-800 space-y-12">
+        {/* Experience List Container */}
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
           {resumeData.experience.map((exp, idx) => (
             <motion.div
               key={exp.id}
@@ -53,11 +53,6 @@ export function Experience() {
               transition={{ duration: 0.5, delay: idx * 0.2 }}
               className="relative group"
             >
-              {/* Timeline Node Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white dark:bg-zinc-950 border-2 border-pink-500 flex items-center justify-center group-hover:scale-125 group-hover:border-rose-500 transition-all shadow-md shadow-pink-500/20">
-                <div className="w-2 h-2 rounded-full bg-pink-500" />
-              </div>
-
               {/* Experience Card */}
               <div className="p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800/80 backdrop-blur-xl space-y-6 shadow-xl shadow-pink-500/5 hover:border-pink-500/40 transition-all">
                 {/* Header Info */}
@@ -71,8 +66,8 @@ export function Experience() {
                         {exp.company}
                       </span>
                     </div>
-                    <p className="text-sm text-pink-600 dark:text-pink-400 font-medium mt-1 flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5" /> AI Automation & Full-Stack Systems
+                    <p className="text-sm text-pink-600 dark:text-pink-400 font-medium mt-1">
+                      AI Automation & Full-Stack Systems
                     </p>
                   </div>
 
@@ -120,3 +115,4 @@ export function Experience() {
     </section>
   );
 }
+

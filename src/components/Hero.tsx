@@ -15,7 +15,7 @@ import { resumeData } from "@/data/resume";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center pt-24 pb-10 sm:pt-28 sm:pb-14 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Heading, Bio & Links */}

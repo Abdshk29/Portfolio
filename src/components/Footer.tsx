@@ -9,10 +9,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative z-10 border-t border-zinc-200 dark:border-zinc-800/90 bg-white/95 dark:bg-zinc-950/95 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="relative z-10 border-t border-zinc-200 dark:border-zinc-800/90 bg-white/95 dark:bg-zinc-950/95 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
         {/* Left: Brand logo & Title */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 text-center sm:text-left">
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 p-0.5 shadow-sm shadow-pink-500/20">
             <div className="w-full h-full bg-white dark:bg-zinc-950 rounded-[10px] flex items-center justify-center">
               <Code2 className="w-4 h-4 text-pink-600 dark:text-pink-400" />
@@ -29,11 +29,11 @@ export function Footer() {
         </div>
 
         {/* Center: Copyright */}
-        <div className="text-center text-xs text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
-          <span>© {new Date().getFullYear()} {resumeData.personal.name}. Designed with</span>
-          <Heart className="w-3.5 h-3.5 text-pink-500 fill-pink-500" />
-          <span>in Next.js 15 & Motion.</span>
-        </div>
+        <p className="text-center text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs sm:max-w-none">
+          © {new Date().getFullYear()} {resumeData.personal.name}. Designed with{" "}
+          <Heart className="w-3.5 h-3.5 text-pink-500 fill-pink-500 inline-block align-middle shrink-0 mx-0.5" />{" "}
+          in Next.js 15 & Motion.
+        </p>
 
         {/* Right: Social Links & Back to Top */}
         <div className="flex items-center space-x-4">

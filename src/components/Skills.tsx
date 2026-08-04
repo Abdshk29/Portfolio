@@ -121,8 +121,8 @@ export function Skills() {
       : resumeData.skills.filter((s) => s.category === activeCategory);
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <motion.div

@@ -161,7 +161,7 @@ export const resumeData = {
       subtitle: "Automated Scholarship Eligibility Checker",
       description:
         "Developed a scholarship Eligibility Checker that scans student CNIC and academic transcripts to return eligible active scholarship programs.",
-      tags: ["Python", "OCR", "FastAPI", "AI Document Processing"],
+      tags: ["Python", "OCR", "AI Document Processing", "Firebase", "HTML/CSS"],
       githubUrl: "https://github.com/Abdshk29/ScholarAI",
       featured: true,
     },
@@ -171,7 +171,7 @@ export const resumeData = {
       subtitle: "PDF to Smart Flashcards & Automated Quiz Engine",
       description:
         "Developed an AI-based system converting uploaded PDF documents into interactive study flashcards and automated quizzes using Retrieval-Augmented Generation (RAG).",
-      tags: ["RAG Systems", "Python", "PDF Processing", "Next.js", "PineCone"],
+      tags: ["Python", "PDF Processing", "Next.js", "Supabase"],
       githubUrl: "https://github.com/Abdshk29/FlashQuizPlus",
       featured: true,
     },
