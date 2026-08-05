@@ -25,6 +25,7 @@ export function Contact() {
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [apiError, setApiError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -40,7 +41,7 @@ export function Contact() {
     return errs;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
 
@@ -50,12 +51,23 @@ export function Contact() {
     }
 
     setErrors({});
+    setApiError(null);
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setSubmitted(true);
       try {
         confetti({
           particleCount: 90,
@@ -68,7 +80,12 @@ export function Contact() {
       }
 
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1000);
+    } catch (err: any) {
+      console.error("Contact form error:", err);
+      setApiError(err.message || "An error occurred while sending your message.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -321,6 +338,13 @@ export function Contact() {
                     </p>
                   )}
                 </div>
+
+                {apiError && (
+                  <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-xs font-semibold flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{apiError}</span>
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <button
